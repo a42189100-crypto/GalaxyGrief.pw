@@ -3,88 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GalaxyGrief.pw — Доноры</title>
+    <title>GalaxyGrief — Главная</title>
+    <meta name="description" content="GalaxyGrief — Minecraft сервер. Покупай привилегии за Telegram Stars: Основа-Консоль 500⭐, Овнер 250⭐, Админ и другие.">
+    <meta name="keywords" content="GalaxyGrief, Minecraft, сервер, донат, Telegram Stars, привилегии">
+    <meta name="robots" content="index, follow">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #1a1a2e;
-            color: #eee;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0c0c1e;
+            color: #fff;
+            line-height: 1.6;
         }
-        h1 {
-            text-align: center;
+
+        /* Шапка */
+        header {
+            background: rgba(10, 10, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid #6c5ce7;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #6c5ce7;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
             color: #ffd700;
         }
-        table {
-            width: 80%;
+
+        /* Главный блок */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(135deg, #0f0f2e 0%, #1a1a40 100%);
+            border-bottom: 3px solid #6c5ce7;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #6c5ce7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #7d6ff0;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn-gold {
+            background: #ffd700;
+            color: #1a1a40;
+        }
+
+        .btn-gold:hover {
+            background: #ffed4a;
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        /* Секция услуг */
+        .services {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.2rem;
+            color: #ffd700;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
             margin: 0 auto;
-            border-collapse: collapse;
-            background: #16213e;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
-        th {
-            background: #0f3460;
+
+        .service-card {
+            background: #151530;
+            border: 2px solid #2a2a50;
+            border-radius: 12px;
+            padding: 30px 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            border-color: #ffd700;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
             color: #ffd700;
-            padding: 12px;
-            font-size: 18px;
+            margin-bottom: 10px;
         }
-        td {
-            padding: 10px;
-            border-bottom: 1px solid #2a3a5e;
+
+        .service-card p {
+            color: #bbb;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .price-new {
+            font-size: 1.6rem;
+            color: #00ff88;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .discount {
+            display: inline-block;
+            background: #e74c3c;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        /* Таблица цен */
+        .pricing {
+            padding: 60px 20px;
+            background: rgba(20, 20, 45, 0.5);
             text-align: center;
         }
-        tr:hover {
-            background: #1a2a4a;
+
+        .pricing h2 {
+            font-size: 2.2rem;
+            color: #ffd700;
+            margin-bottom: 30px;
         }
-        .sum {
+
+        .pricing-table {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #151530;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #2a2a50;
+        }
+
+        .pricing-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .pricing-table th {
+            background: #6c5ce7;
+            color: #fff;
+            padding: 15px;
+            font-size: 1rem;
+        }
+
+        .pricing-table td {
+            padding: 12px;
+            border-bottom: 1px solid #2a2a50;
+            color: #ddd;
+        }
+
+        .pricing-table tr:hover {
+            background: rgba(108, 92, 231, 0.1);
+        }
+
+        .pricing-table .old {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .pricing-table .new {
             color: #00ff88;
             font-weight: bold;
         }
-        .footer {
+
+        /* Футер */
+        footer {
+            background: #0a0a20;
+            padding: 30px 20px;
             text-align: center;
-            margin-top: 20px;
+            border-top: 3px solid #6c5ce7;
+        }
+
+        footer p {
             color: #888;
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .telegram-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 25px;
+            background: #0088cc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .telegram-btn:hover {
+            background: #00a8f0;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>🌟 Благодарим наших доноров! 🌟</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>№</th>
-                <th>Имя</th>
-                <th>Сумма</th>
-                <th>Дата</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Сюда вставляйте строки с донатами -->
-            <tr>
-                <td>1</td>
-                <td>Алексей</td>
-                <td class="sum">100 ₽</td>
-                <td>2026-06-21</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Мария</td>
-                <td class="sum">250 ₽</td>
-                <td>2026-06-20</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Дмитрий</td>
-                <td class="sum">50 ₽</td>
-                <td>2026-06-19</td>
-            </tr>
-            <!-- Добавляйте новые строки по образцу -->
-        </tbody>
-    </table>
-    <div class="footer">
-        ❤️ Спасибо за поддержку! Чтобы добавить свой донат, напишите нам.
-    </div>
+
+    <!-- Шапка -->
+    <header>
+        <div class="logo">GALAXY<span>GRIEF</span></div>
+        <nav>
+            <a href="#services">Привилегии</a>
+            <a href="#pricing">Цены</a>
+            <a href="https://t.me/unsenu" target="_blank">Контакты</a>
+        </nav>
+    </header>
+
+    <!-- Главный блок -->
+    <section class="hero">
+        <h1>Добро пожаловать на GalaxyGrief</h1>
+        <p>Лучший Minecraft сервер с уникальными привилегиями. Покупай донат за Telegram Stars и получай крутые возможности!</p>
+        <a href="#services" class="btn">Смотреть привилегии</a>
+        <a href="https://t.me/unsenu" target="_blank" class="btn btn-gold">Купить сейчас</a>
+    </section>
+
+    <!-- Привилегии -->
+    <section id="services" class="services">
+        <h2>🔥 НАШИ ПРИВИЛЕГИИ</h2>
+        <div class="services-grid" id="servicesGrid">
+            <!-- Генерируется JS -->
+        </div>
+    </section>
+
+    <!-- Таблица цен -->
+    <section id="pricing" class="pricing">
+        <h2>📊 ПОЛНАЯ ТАБЛИЦА ЦЕН</h2>
+        <div class="pricing-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ранг</th>
+                        <th>Старая цена</th>
+                        <th>Новая цена</th>
+                        <th>Скидка</th>
+                    </tr>
+                </thead>
+                <tbody id="pricingBody">
+                    <!-- Генерируется JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>© 2026 GalaxyGrief. Все права защищены.</p>
+        <p>Связь с администрацией: <a href="https://t.me/unsenu" target="_blank">@unsenu</a></p>
+        <a href="https://t.me/unsenu" target="_blank" class="telegram-btn">💬 Написать в Telegram</a>
+        <p style="margin-top:10px; font-size:0.8rem; color:#ffd700;">Создано при поддержке @unsenu и Windows11</p>
+    </footer>
+
+    <script>
+        const items = [
+            {
+                icon: '👑',
+                title: 'Овнер',
+                desc: 'Полный доступ ко всем функциям сервера, управление игроками и мирами, высший приоритет.',
+                oldPrice: '500 ⭐',
+                newPrice: '250 ⭐',
+                discount: '-50%',
+                link: 'Привет!%20Хочу%20купить%20Овнера'
+            },
+            {
+                icon: '🖥️',
+                title: 'Основа-Консоль',
+                desc: 'Доступ к консоли, управление плагинами, приоритетная очередь, настройка миров.',
+                oldPrice: '750 ⭐',
+                newPrice: '500 ⭐',
+                discount: '-33%',
+                link: 'Привет!%20Хочу%20купить%20Основу-Консоль'
+            },
+            {
+                icon: '⚡',
+                title: 'Админ',
+                desc: 'Полный админ-доступ, бан/кик, выдача предметов, проведение ивентов.',
+                oldPrice: '400 ⭐',
+                newPrice: '200 ⭐',
+                discount: '-50%',
+                link: 'Привет!%20Хочу%20купить%20Админа'
+            },
+            {
+                icon: '🛠️',
+                title: 'Мл. Админ',
+                desc: 'Помощь старшим админам, мониторинг чата, предупреждения, тестирование.',
+                oldPrice: '300 ⭐',
+                newPrice: '150 ⭐',
+                discount: '-50%',
+                link: 'Привет!%20Хочу%20купить%20Мл.%20Админа'
+            },
+            {
+                icon: '🦄',
+                title: 'Пегас',
+                desc: 'Летающий маунт, скорость полёта, неуязвимость при падении, небесные биомы.',
+                oldPrice: '250 ⭐',
+                newPrice: '120 ⭐',
+                discount: '-52%',
+                link: 'Привет!%20Хочу%20купить%20Пегаса'
+            },
+            {
+                icon: '🔥',
+                title: 'Дадмин',
+                desc: 'Помощь в чате, предупреждения и мут, участие в жизни сервера.',
+                oldPrice: '200 ⭐',
+                newPrice: '100 ⭐',
+                discount: '-50%',
+                link: 'Привет!%20Хочу%20купить%20Дадмина'
+            },
+            {
+                icon: '🛡️',
+                title: 'Дмодер',
+                desc: 'Модерация чата, выдача предупреждений, помощь новичкам.',
+                oldPrice: '160 ⭐',
+                newPrice: '80 ⭐',
+                discount: '-50%',
+                link: 'Привет!%20Хочу%20купить%20Дмодера'
+            }
+        ];
+
+        // Генерация карточек услуг
+        const grid = document.getElementById('servicesGrid');
+        items.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'service-card';
+            card.innerHTML = `
+                <div class="service-icon">${item.icon}</div>
+                <h3>${item.title}</h3>
+                <p>${item.desc}</p>
+                <div class="price-old">${item.oldPrice}</div>
+                <div class="price-new">${item.newPrice}</div>
+                <span class="discount">${item.discount}</span>
+                <br><br>
+                <a href="https://t.me/unsenu?text=${item.link}" target="_blank" class="btn" style="padding:10px 20px; font-size:0.9rem;">Купить</a>
+            `;
+            grid.appendChild(card);
+        });
+
+        // Генерация таблицы
+        const tbody = document.getElementById('pricingBody');
+        items.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.icon} ${item.title}</td>
+                <td class="old">${item.oldPrice}</td>
+                <td class="new">${item.newPrice}</td>
+                <td>${item.discount}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    </script>
 </body>
 </html>
