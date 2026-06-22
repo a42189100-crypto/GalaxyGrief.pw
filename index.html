@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GalaxyGrief — Главная</title>
-    <meta name="description" content="GalaxyGrief — Minecraft сервер. Покупай привилегии за Telegram Stars: Основа-Консоль 500⭐, Овнер 250⭐, Админ и другие.">
-    <meta name="keywords" content="GalaxyGrief, Minecraft, сервер, донат, Telegram Stars, привилегии">
+    <title>GalaxyGrief — Магазин доната</title>
+    <meta name="description" content="GalaxyGrief — Minecraft сервер. Покупай привилегии за Telegram Stars и рубли: Кит ПВП, Основа-Консоль, Овнер, Админ, Пегас, Рилики.">
+    <meta name="keywords" content="GalaxyGrief, Minecraft, сервер, донат, Telegram Stars, привилегии, кит пвп, рилики">
     <meta name="robots" content="index, follow">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #0c0c1e;
             color: #fff;
             line-height: 1.6;
         }
-
-        /* Шапка */
         header {
             background: rgba(10, 10, 30, 0.95);
             backdrop-filter: blur(10px);
@@ -33,8 +26,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            flex-wrap: wrap;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
@@ -42,47 +35,23 @@
             text-shadow: 2px 2px 5px rgba(255, 215, 0, 0.5);
             letter-spacing: 2px;
         }
-
-        .logo span {
-            color: #6c5ce7;
-        }
-
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd700;
-        }
-
-        /* Главный блок */
+        .logo span { color: #6c5ce7; }
+        nav { display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: #ccc; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: #ffd700; }
         .hero {
             text-align: center;
             padding: 80px 20px 60px;
             background: linear-gradient(135deg, #0f0f2e 0%, #1a1a40 100%);
             border-bottom: 3px solid #6c5ce7;
         }
-
         .hero h1 {
             font-size: 3rem;
             color: #ffd700;
             margin-bottom: 20px;
             text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.4);
         }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #ccc;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+        .hero p { font-size: 1.3rem; color: #ccc; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
         .btn {
             display: inline-block;
             padding: 15px 35px;
@@ -97,88 +66,35 @@
             border: none;
             cursor: pointer;
         }
-
-        .btn:hover {
-            background: #7d6ff0;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4);
-        }
-
-        .btn-gold {
-            background: #ffd700;
-            color: #1a1a40;
-        }
-
-        .btn-gold:hover {
-            background: #ffed4a;
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-        }
-
-        /* Секция услуг */
-        .services {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .services h2 {
-            font-size: 2.2rem;
-            color: #ffd700;
-            margin-bottom: 40px;
-        }
-
+        .btn:hover { background: #7d6ff0; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(108, 92, 231, 0.4); }
+        .btn-gold { background: #ffd700; color: #1a1a40; }
+        .btn-gold:hover { background: #ffed4a; box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4); }
+        .services { padding: 60px 20px; text-align: center; }
+        .services h2 { font-size: 2.2rem; color: #ffd700; margin-bottom: 40px; }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             max-width: 1100px;
             margin: 0 auto;
         }
-
         .service-card {
             background: #151530;
             border: 2px solid #2a2a50;
             border-radius: 12px;
             padding: 30px 20px;
             transition: all 0.3s;
-            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
-
-        .service-card:hover {
-            border-color: #ffd700;
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-        }
-
-        .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            color: #bbb;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .price-old {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .price-new {
-            font-size: 1.6rem;
-            color: #00ff88;
-            font-weight: bold;
-            margin: 8px 0;
-        }
-
+        .service-card:hover { border-color: #ffd700; transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); }
+        .service-icon { font-size: 3.5rem; margin-bottom: 15px; }
+        .service-card h3 { font-size: 1.4rem; color: #ffd700; margin-bottom: 10px; }
+        .service-card p { color: #bbb; font-size: 0.95rem; margin-bottom: 15px; }
+        .price-old { text-decoration: line-through; color: #888; font-size: 0.9rem; }
+        .price-new { font-size: 1.6rem; color: #00ff88; font-weight: bold; margin: 8px 0; }
         .discount {
             display: inline-block;
             background: #e74c3c;
@@ -188,20 +104,50 @@
             font-size: 0.85rem;
             margin-top: 5px;
         }
-
-        /* Таблица цен */
-        .pricing {
-            padding: 60px 20px;
-            background: rgba(20, 20, 45, 0.5);
-            text-align: center;
+        .inventory-preview {
+            background: #1a1a30;
+            border: 2px solid #3a3a5e;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 15px 0;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 4px;
+            width: 100%;
+            max-width: 300px;
         }
-
-        .pricing h2 {
-            font-size: 2.2rem;
+        .inv-slot {
+            aspect-ratio: 1;
+            background: #2a2a40;
+            border: 2px solid #4a4a6e;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .inv-slot.highlight {
+            border-color: #ffd700;
+            background: #3a3a55;
+        }
+        .kit-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 10px 0;
+            font-size: 0.8rem;
+        }
+        .kit-stat {
+            background: #2a2a45;
+            padding: 5px 10px;
+            border-radius: 15px;
             color: #ffd700;
-            margin-bottom: 30px;
+            border: 1px solid #6c5ce7;
         }
-
+        .pricing { padding: 60px 20px; background: rgba(20, 20, 45, 0.5); text-align: center; }
+        .pricing h2 { font-size: 2.2rem; color: #ffd700; margin-bottom: 30px; }
         .pricing-table {
             max-width: 800px;
             margin: 0 auto;
@@ -210,61 +156,21 @@
             overflow: hidden;
             border: 2px solid #2a2a50;
         }
-
-        .pricing-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .pricing-table th {
-            background: #6c5ce7;
-            color: #fff;
-            padding: 15px;
-            font-size: 1rem;
-        }
-
-        .pricing-table td {
-            padding: 12px;
-            border-bottom: 1px solid #2a2a50;
-            color: #ddd;
-        }
-
-        .pricing-table tr:hover {
-            background: rgba(108, 92, 231, 0.1);
-        }
-
-        .pricing-table .old {
-            text-decoration: line-through;
-            color: #888;
-        }
-
-        .pricing-table .new {
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        /* Футер */
+        .pricing-table table { width: 100%; border-collapse: collapse; }
+        .pricing-table th { background: #6c5ce7; color: #fff; padding: 15px; font-size: 1rem; }
+        .pricing-table td { padding: 12px; border-bottom: 1px solid #2a2a50; color: #ddd; }
+        .pricing-table tr:hover { background: rgba(108, 92, 231, 0.1); }
+        .pricing-table .old { text-decoration: line-through; color: #888; }
+        .pricing-table .new { color: #00ff88; font-weight: bold; }
         footer {
             background: #0a0a20;
             padding: 30px 20px;
             text-align: center;
             border-top: 3px solid #6c5ce7;
         }
-
-        footer p {
-            color: #888;
-            margin: 5px 0;
-        }
-
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
+        footer p { color: #888; margin: 5px 0; }
+        footer a { color: #ffd700; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
         .telegram-btn {
             display: inline-block;
             margin-top: 15px;
@@ -275,25 +181,16 @@
             border-radius: 25px;
             transition: all 0.3s;
         }
-
-        .telegram-btn:hover {
-            background: #00a8f0;
-        }
-
+        .telegram-btn:hover { background: #00a8f0; }
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 10px; }
+            .inventory-preview { max-width: 250px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Шапка -->
     <header>
         <div class="logo">GALAXY<span>GRIEF</span></div>
         <nav>
@@ -303,48 +200,35 @@
         </nav>
     </header>
 
-    <!-- Главный блок -->
     <section class="hero">
         <h1>Добро пожаловать на GalaxyGrief</h1>
-        <p>Лучший Minecraft сервер с уникальными привилегиями. Покупай донат за Telegram Stars и получай крутые возможности!</p>
-        <a href="#services" class="btn">Смотреть привилегии</a>
+        <p>Лучший Minecraft сервер. Покупай привилегии и киты за Telegram Stars и рубли!</p>
+        <a href="#services" class="btn">Смотреть товары</a>
         <a href="https://t.me/unsenu" target="_blank" class="btn btn-gold">Купить сейчас</a>
     </section>
 
-    <!-- Привилегии -->
     <section id="services" class="services">
-        <h2>🔥 НАШИ ПРИВИЛЕГИИ</h2>
-        <div class="services-grid" id="servicesGrid">
-            <!-- Генерируется JS -->
-        </div>
+        <h2>🔥 НАШИ ТОВАРЫ</h2>
+        <div class="services-grid" id="servicesGrid"></div>
     </section>
 
-    <!-- Таблица цен -->
     <section id="pricing" class="pricing">
         <h2>📊 ПОЛНАЯ ТАБЛИЦА ЦЕН</h2>
         <div class="pricing-table">
             <table>
                 <thead>
-                    <tr>
-                        <th>Ранг</th>
-                        <th>Старая цена</th>
-                        <th>Новая цена</th>
-                        <th>Скидка</th>
-                    </tr>
+                    <tr><th>Товар</th><th>Старая цена</th><th>Новая цена</th><th>Скидка</th></tr>
                 </thead>
-                <tbody id="pricingBody">
-                    <!-- Генерируется JS -->
-                </tbody>
+                <tbody id="pricingBody"></tbody>
             </table>
         </div>
     </section>
 
-    <!-- Футер -->
     <footer>
         <p>© 2026 GalaxyGrief. Все права защищены.</p>
-        <p>Связь с администрацией: <a href="https://t.me/unsenu" target="_blank">@unsenu</a></p>
+        <p>Связь: <a href="https://t.me/unsenu" target="_blank">@unsenu</a></p>
         <a href="https://t.me/unsenu" target="_blank" class="telegram-btn">💬 Написать в Telegram</a>
-        <p style="margin-top:10px; font-size:0.8rem; color:#ffd700;">Создано при поддержке @unsenu и Windows11</p>
+        <p style="margin-top:10px; font-size:0.8rem; color:#ffd700;">Создано при поддержке PAORS и Windows11</p>
     </footer>
 
     <script>
@@ -352,95 +236,137 @@
             {
                 icon: '👑',
                 title: 'Овнер',
-                desc: 'Полный доступ ко всем функциям сервера, управление игроками и мирами, высший приоритет.',
+                desc: 'Полный доступ, управление сервером, высший приоритет.',
                 oldPrice: '500 ⭐',
                 newPrice: '250 ⭐',
                 discount: '-50%',
-                link: 'Привет!%20Хочу%20купить%20Овнера'
+                link: 'Привет!%20Хочу%20купить%20Овнера',
+                type: 'privilege'
             },
             {
                 icon: '🖥️',
                 title: 'Основа-Консоль',
-                desc: 'Доступ к консоли, управление плагинами, приоритетная очередь, настройка миров.',
+                desc: 'Доступ к консоли, плагины, настройка миров.',
                 oldPrice: '750 ⭐',
                 newPrice: '500 ⭐',
                 discount: '-33%',
-                link: 'Привет!%20Хочу%20купить%20Основу-Консоль'
+                link: 'Привет!%20Хочу%20купить%20Основу-Консоль',
+                type: 'privilege'
             },
             {
                 icon: '⚡',
                 title: 'Админ',
-                desc: 'Полный админ-доступ, бан/кик, выдача предметов, проведение ивентов.',
+                desc: 'Бан/кик, предметы, ивенты.',
                 oldPrice: '400 ⭐',
                 newPrice: '200 ⭐',
                 discount: '-50%',
-                link: 'Привет!%20Хочу%20купить%20Админа'
-            },
-            {
-                icon: '🛠️',
-                title: 'Мл. Админ',
-                desc: 'Помощь старшим админам, мониторинг чата, предупреждения, тестирование.',
-                oldPrice: '300 ⭐',
-                newPrice: '150 ⭐',
-                discount: '-50%',
-                link: 'Привет!%20Хочу%20купить%20Мл.%20Админа'
+                link: 'Привет!%20Хочу%20купить%20Админа',
+                type: 'privilege'
             },
             {
                 icon: '🦄',
                 title: 'Пегас',
-                desc: 'Летающий маунт, скорость полёта, неуязвимость при падении, небесные биомы.',
+                desc: 'Летающий маунт, скорость, биомы.',
                 oldPrice: '250 ⭐',
                 newPrice: '120 ⭐',
                 discount: '-52%',
-                link: 'Привет!%20Хочу%20купить%20Пегаса'
+                link: 'Привет!%20Хочу%20купить%20Пегаса',
+                type: 'privilege'
             },
             {
                 icon: '🔥',
                 title: 'Дадмин',
-                desc: 'Помощь в чате, предупреждения и мут, участие в жизни сервера.',
+                desc: 'Чат, мут, помощь игрокам.',
                 oldPrice: '200 ⭐',
                 newPrice: '100 ⭐',
                 discount: '-50%',
-                link: 'Привет!%20Хочу%20купить%20Дадмина'
+                link: 'Привет!%20Хочу%20купить%20Дадмина',
+                type: 'privilege'
             },
             {
                 icon: '🛡️',
                 title: 'Дмодер',
-                desc: 'Модерация чата, выдача предупреждений, помощь новичкам.',
+                desc: 'Модерация чата, новички.',
                 oldPrice: '160 ⭐',
                 newPrice: '80 ⭐',
                 discount: '-50%',
-                link: 'Привет!%20Хочу%20купить%20Дмодера'
+                link: 'Привет!%20Хочу%20купить%20Дмодера',
+                type: 'privilege'
+            },
+            {
+                icon: '💎',
+                title: 'Рилики',
+                desc: 'Внутриигровая валюта. 1₽ = 100 риликов.',
+                oldPrice: '',
+                newPrice: '1₽ = 100',
+                discount: '',
+                link: 'Привет!%20Хочу%20купить%20Рилики',
+                type: 'riliki'
+            },
+            {
+                icon: '⚔️',
+                title: 'Кит ПВП',
+                desc: 'Полный набор для PvP с бафами.',
+                oldPrice: '',
+                newPrice: '100 ₽',
+                discount: '',
+                link: 'Привет!%20Хочу%20купить%20Кит%20ПВП',
+                type: 'kit',
+                inventory: true
             }
         ];
 
-        // Генерация карточек услуг
         const grid = document.getElementById('servicesGrid');
         items.forEach(item => {
             const card = document.createElement('div');
             card.className = 'service-card';
+            
+            let extraHTML = '';
+            if (item.type === 'kit' && item.inventory) {
+                extraHTML = `
+                    <div class="inventory-preview">
+                        <div class="inv-slot highlight">🗡️</div>
+                        <div class="inv-slot highlight">⛏️</div>
+                        <div class="inv-slot">🪣</div>
+                        <div class="inv-slot">🍞</div>
+                        <div class="inv-slot">🏹</div>
+                        <div class="inv-slot highlight">🛡️</div>
+                        <div class="inv-slot">🪓</div>
+                        <div class="inv-slot">🍎</div>
+                        <div class="inv-slot highlight">🧪</div>
+                    </div>
+                    <div class="kit-stats">
+                        <span class="kit-stat">💪 Сила II</span>
+                        <span class="kit-stat">⚡ Скорость III</span>
+                        <span class="kit-stat">🛡️ Защита IV</span>
+                        <span class="kit-stat">🔥 Огнестойкость</span>
+                        <span class="kit-stat">🌊 Подводное дыхание</span>
+                    </div>
+                `;
+            }
+
             card.innerHTML = `
                 <div class="service-icon">${item.icon}</div>
                 <h3>${item.title}</h3>
                 <p>${item.desc}</p>
-                <div class="price-old">${item.oldPrice}</div>
+                ${item.oldPrice ? `<div class="price-old">${item.oldPrice}</div>` : ''}
                 <div class="price-new">${item.newPrice}</div>
-                <span class="discount">${item.discount}</span>
-                <br><br>
+                ${item.discount ? `<span class="discount">${item.discount}</span>` : ''}
+                ${extraHTML}
+                <br>
                 <a href="https://t.me/unsenu?text=${item.link}" target="_blank" class="btn" style="padding:10px 20px; font-size:0.9rem;">Купить</a>
             `;
             grid.appendChild(card);
         });
 
-        // Генерация таблицы
         const tbody = document.getElementById('pricingBody');
         items.forEach(item => {
             const row = document.createElement('tr');
             row.innerHTML = `
                 <td>${item.icon} ${item.title}</td>
-                <td class="old">${item.oldPrice}</td>
+                <td class="old">${item.oldPrice || '-'}</td>
                 <td class="new">${item.newPrice}</td>
-                <td>${item.discount}</td>
+                <td>${item.discount || '-'}</td>
             `;
             tbody.appendChild(row);
         });
